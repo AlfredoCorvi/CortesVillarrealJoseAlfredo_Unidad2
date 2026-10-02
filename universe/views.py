@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    context = {
+        'title' : 'Explorando el universo con django',
+        'planets' : ['Mercurio', 'Venus', 'Tierra', 'Marte', 'Jupiter']
+    }
+
+    return render(request, 'universe/index.html', context)
