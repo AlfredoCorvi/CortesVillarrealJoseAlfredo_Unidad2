@@ -1,0 +1,13 @@
+{% extends 'universe/auth/base.html' %}
+{% block title %}Crear cuenta{% endblock %}
+{% block form_content %}
+    <p class="eyebrow">COMIENZA TU VIAJE</p>
+    <h2 id="auth-title">Crear cuenta</h2>
+    <p class="auth-description">Tu curiosidad ya tiene un lugar. Completa tus datos para comenzar.</p>
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% include 'universe/auth/fields.html' %}
+        <button class="button button-primary auth-submit" type="submit">Crear mi cuenta <span aria-hidden="true">↗</span></button>
+    </form>
+    <p class="auth-switch">¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
+{% endblock %}
